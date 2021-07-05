@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ClasseService } from './core/service/classe/classe.service';
-import { SerieService } from './core/service/serie/serie.service';
+import { ClasseService } from './core/service/classe.service';
+import { SerieService } from './core/service/serie.service';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +12,6 @@ export class AppComponent implements OnInit{
 
   constructor(private serieService: SerieService, private classeService: ClasseService){}
 
-  ngOnInit() {
-
-    console.log('Alô Brasil!');
-    this.serieService.buscarSeries().subscribe(series => {
-      console.log(series);
-    })
-
-    this.classeService.buscarSeries().subscribe(classes => {
-      console.log(classes);
-    })
-
-  }
+  ngOnInit() {}
 
 }
