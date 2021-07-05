@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClasseService } from '@services';
 import { EstudanteService } from './estudante.service';
 
 @Component({
@@ -9,9 +10,13 @@ import { EstudanteService } from './estudante.service';
 })
 export class EstudanteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private classeService:ClasseService) { }
 
   ngOnInit(): void {
+
+    this.classeService.buscarSeries().subscribe(series => {
+      console.log(series);
+    });
   }
 
 }
