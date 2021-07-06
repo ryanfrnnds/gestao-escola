@@ -8,7 +8,7 @@ import { LoadService } from '@services';
 })
 export class BootstrapComponent implements OnInit {
 
-  public mostrarLoading = false;
+  public mostrarLoading = true;
 
   constructor(public loadService: LoadService) { }
 
