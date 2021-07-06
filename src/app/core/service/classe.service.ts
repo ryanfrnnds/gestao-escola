@@ -22,4 +22,14 @@ export class ClasseService {
       })
     );
   }
+
+  inserir(): Observable<any[]> {
+    return this.http.get<any[]>(this.classeUrl).pipe(
+      retry(2),
+      catchError((error: HttpErrorResponse) => {
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
 }

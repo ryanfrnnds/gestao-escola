@@ -1,4 +1,4 @@
-import { Dropdown } from "@entity-prime";
+import { Dropdown } from "@entidade-prime";
 
 
 export class DropdownPrimeUtil {

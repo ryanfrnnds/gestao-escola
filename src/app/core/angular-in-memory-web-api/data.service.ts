@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { Classe, Serie } from '@entidade';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class DataService implements InMemoryDbService {
     };
 }
 
-  public classes():Array<{id:number, nome:string}>{
+  public classes():Array<Classe>{
     return [
       {
         id: 1,
@@ -50,7 +51,7 @@ export class DataService implements InMemoryDbService {
     ];
   }
 
-  public series():Array<{id:number, nome:string}>{
+  public series():Array<Serie>{
     return [
       {
         "id":1,
