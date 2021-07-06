@@ -1,17 +1,9 @@
-<p>estudante works!</p>
-
-
-<div class="p-grid">
-    <div class="p-col-12">
-      <h1 class="tituloArea">Estudante</h1>
-    </div>
-  </div>
-  <!--
-  <div [formGroup]="formulario">
-    <app-filtros [formulario]="formulario" [listaFuncao]="listaFuncao" [listaFolhaPagamento]="listaFolhaPagamento" (aoBuscarFolhaPagamento)="buscarFolhaPagamento($event.query)"
-      (aoPesquisar)="pesquisar()" (aoLimpar)="limpar()">
-    </app-filtros>
-  </div>
+<div>
+  <app-filtro [formulario]="formulario" [series]="series" (aoBuscarSerie)="buscarSerie($event.query)" (aoPesquisar)="pesquisar()"
+    (aoLimpar)="limpar()">
+  </app-filtro>
+</div>
+<!--
   <div class="p-grid" *ngIf="paginated?.content?.length">
     <div class="p-col-12">
       <app-estatisticas [estatisticas]="estatisticas"></app-estatisticas>
@@ -19,4 +11,3 @@
     </div>
   </div>
   -->
-  

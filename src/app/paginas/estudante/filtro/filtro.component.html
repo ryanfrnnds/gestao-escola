@@ -1,1 +1,26 @@
-<p>filtro works!</p>
+<p-card>
+  <form [formGroup]="formulario" (ngSubmit)="pesquisar()">
+    <div class="p-grid">
+      <div class="p-col-12 p-md-6 p-lg-6">
+        <div class="p-field">
+          <label for="idSeries" class="lbl_inputs">Series</label>
+
+          <p-dropdown id="idSeries" [placeholder]="'&nbsp;'" [options]="series" [showClear]="true" formControlName="serie"
+            optionLabel="nome" [filter]="true">
+          </p-dropdown>
+          <span class="dica_inputs">
+            {{this.formulario.get('serie').value ? 'Clique no X ao final do campo para limpar' : 'Selecione a série clicando no campo'}}
+          </span>
+
+        </div>
+      </div>
+    </div>
+    <p-footer>
+      <div class="p-grid p-justify-end">
+        <button pButton type="submit" id="btnPesquisar" icon="pi pi-search" label="Pesquisar"></button>
+        <button pButton type="button" id="btnLimpar" icon="pi pi-times" label="Limpar" (click)="limpar()" class="laranja"></button>
+      </div>
+    </p-footer>
+  </form>
+
+</p-card>
