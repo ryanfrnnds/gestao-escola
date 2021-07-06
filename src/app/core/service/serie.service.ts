@@ -12,7 +12,7 @@ export class SerieService {
 
   constructor(private http: HttpClient) { }
 
-  buscarSeries(): Observable<any[]> {
+  buscar(): Observable<any[]> {
     return this.http.get<any[]>(this.serieUrl).pipe(
       retry(2),
       catchError((error: HttpErrorResponse) => {

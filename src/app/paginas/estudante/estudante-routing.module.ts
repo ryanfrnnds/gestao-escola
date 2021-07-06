@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SerieResolver } from '@resolver';
+import { ClasseResolver } from 'src/app/core/resolver/classe.resolver';
 import { EstudanteComponent } from './estudante.component';
 
 const routes: Routes = [
@@ -9,6 +10,7 @@ const routes: Routes = [
     component: EstudanteComponent,
      resolve: {
       series: SerieResolver,
+      classes: ClasseResolver,
     },
 
   }

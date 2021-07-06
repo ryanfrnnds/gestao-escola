@@ -24,9 +24,7 @@ export class FiltroComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.series);
-  }
+  ngOnInit(): void {}
 
   public pesquisar(): void {
     if (this.formulario.invalid) {
@@ -40,11 +38,4 @@ export class FiltroComponent implements OnInit {
 		this.aoLimpar.emit();
 	}
 
-  public buscarSeries(event: any): void {
-    this.aoBuscarSerie.emit(event);
-  }
-
-    public teste(event: any): void {
-      this.aoLimpar.emit();
-    }
 }
