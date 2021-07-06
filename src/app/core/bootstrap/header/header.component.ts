@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 import { HeaderService } from './header.service';
 
 @Component({
@@ -8,9 +9,23 @@ import { HeaderService } from './header.service';
   providers: [HeaderService]
 })
 export class HeaderComponent implements OnInit {
+
+  public items:  Array<MenuItem> = new Array<MenuItem>();
+
   constructor(public service: HeaderService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.items = [
+      {
+          label:'Estudante',
+          icon:'pi pi-fw pi-user'
+      },
+      {
+        label:'Parte 2',
+        icon:'pi pi-fw pi-power-off'
+    }
+  ];
+  }
 
   public fazerResponsivo(){
     console.log('Num fui atraz das logo e nem de redesenhar o tamanho!!!!');
