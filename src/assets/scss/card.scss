@@ -1,0 +1,76 @@
+@import "./palhetas.scss";
+@import "./util.scss";
+
+body {
+  p-card {
+    width: 100%;
+    .p-card {
+      background: #d2d2d285;
+      margin-top: 1%;
+      border-radius: 6px;
+      box-shadow: 1px 1px 1px #cccccc;
+      padding: 0;
+      .p-card-body {
+        .p-card-title {
+          font-family: "soletomedium", sans-serif;
+          margin-left: 1rem;
+          margin-top: 0.5rem;
+          color: color-function($cinza, 700);
+          padding: 0;
+          border-bottom: 1px solid #e0961d;
+          width: 25vw;
+          font-size: 1rem;
+          font-weight: bold;
+          margin-bottom: 0;
+        }
+        
+        .p-card-header {
+          left: 0;
+          right: 0;
+          background: #fff;
+          color: color-function($verde, 700);
+          font-size: 1.5rem;
+          font-weight: bold;
+          padding: 0.5rem 1rem;
+          z-index: 997;
+          font-family: Roboto, sans-serif;
+          .titulo {
+            margin-left: 0.8rem;
+          }
+        }
+        .p-card-footer {
+          padding-bottom: 0.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    .p-card {
+      .p-card-header {
+        button {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    p-card {
+      .p-card {
+        .p-card-header {
+          button {
+            float: right;
+          }
+        }
+        .p-card-title {
+          width: 55vw;
+        }
+      }
+    }
+  }
+}
