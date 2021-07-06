@@ -32,18 +32,6 @@ export class EstudanteComponent implements OnInit {
 		});
 	}
 
-  public buscarSerie(filtro: string){
-    this.series = this.route.snapshot.data.series;
-
-    
-      const listaFiltrada = this.todasAsSeries.filter(item => {
-        const nome:string = ObjectUtil.buscarValor(item, 'nome', '');
-        return nome.toLowerCase().includes(filtro.toLowerCase());
-      });
-
-      this.series = listaFiltrada
-  }
-
   public limpar(): void {
 		this.formulario.reset();
 	}

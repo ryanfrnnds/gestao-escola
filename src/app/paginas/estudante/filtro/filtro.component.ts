@@ -22,9 +22,6 @@ export class FiltroComponent implements OnInit {
 	@Output()
 	private aoLimpar = new EventEmitter();
 
-  @Output()
-	private aoBuscarSerie = new EventEmitter();
-
   constructor() { }
 
   ngOnInit(): void {
