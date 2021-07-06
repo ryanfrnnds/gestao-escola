@@ -7,7 +7,8 @@
       "@enums": ["src/app/core/enums/index"],
       "@services": ["src/app/core/service/index"],
       "@util": ["src/app/core/util/index"],
-      "@entity-prime": ["src/app/core/prime/index"],
+      "@entidade-prime": ["src/app/core/prime/index"],
+      "@entidade": ["src/app/core/entidades/index"],
       "primeng/*": ["node_modules/primeng-lts/*"]
     },
     "outDir": "./dist/out-tsc",
