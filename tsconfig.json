@@ -9,6 +9,7 @@
       "@util": ["src/app/core/util/index"],
       "@entidade-prime": ["src/app/core/prime/index"],
       "@entidade": ["src/app/core/entidades/index"],
+      "@resolver": ["src/app/core/resolver/index"],
       "primeng/*": ["node_modules/primeng-lts/*"]
     },
     "outDir": "./dist/out-tsc",
