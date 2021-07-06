@@ -1,0 +1,422 @@
+@import "./palhetas.scss";
+@import "./util.scss";
+
+body {
+  button.btnTabelaAcoes {
+    border-radius: 6px;
+    &:hover {
+      background: color-function($laranja, 300);
+      color: color-function($branco, 500);
+      box-shadow: none;
+      border: 0;
+    }
+    background-color: color-function($cinza, 100);
+    cursor: pointer;
+  }
+
+  .p-button-icon-only {
+    background-color: color-function($branco, 500);
+    color: color-function($verde, 500);
+    border: unset;
+    border-bottom: 1px solid color-function($verde, 300);
+    border-radius: 0;
+
+    &:enabled:hover {
+      background-color: color-function($branco, 500);
+      color: color-function($verde, 500);
+      border: unset;
+      border-bottom: 1px solid color-function($verde, 300);
+    }
+
+    &:disabled {
+      border-bottom: 2px dotted color-function($verde, 500);
+    }
+
+    &:active {
+      border: 0px;
+      -webkit-box-shadow: 0;
+      -moz-box-shadow: 0;
+      box-shadow: 0;
+    }
+
+    &:focus {
+      border: 0px;
+      -webkit-box-shadow: 0;
+      -moz-box-shadow: 0;
+      box-shadow: 0;
+    }
+  }
+
+  .p-button {
+    &:not(.p-button-icon-only) {
+      border: none;
+      background: color-function($verde, A900);
+      color: color-function($branco, 500);
+      cursor: pointer;
+      outline: 0;
+
+      &:enabled:focus {
+        box-shadow: 0 0 0 0.2em transparent;
+      }
+
+      &:hover {
+        border: none;
+        background: color-function($verde, A900);
+        color: color-function($branco, 500);
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform-style: flat;
+        transform: translate3d(-50%, -30%, 0);
+        background: rgba(color-function($branco, 500), 0.15);
+        border-radius: 100%;
+        transition: width 150ms ease, height 150ms ease;
+      }
+
+      &:focus,
+      &:hover {
+        background: color-function($verde, A900);
+      }
+
+      &:active {
+        &:after {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+  }
+
+  .p-button {
+    margin: 2px;
+    padding: 0px 1rem;
+    border-radius: 24px;
+    height: 40px;
+    text-transform: uppercase;
+    font-family: "roboto", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.8pt;
+    font-size: 0.9rem;
+  }
+
+  .bt_tabela_PDF,
+  .bt_tabela_CSV,
+  .bt_tabela_EXCEL {
+    cursor: pointer;
+    outline: 0;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: "roboto", sans-serif;
+    letter-spacing: 0.2pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: none;
+    height: 35px;
+  }
+
+  .p-button.secundario {
+    line-height: 1.25;
+    background: transparent;
+    border: 1px solid color-function($verde, A900);
+    text-decoration: none;
+    color: color-function($verde, A900);
+    letter-spacing: 0.08em;
+    position: relative;
+    transition: background-color 500ms ease;
+    overflow: hidden;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid color-function($verde, A900);
+      color: color-function($verde, A900);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -30%, 0);
+      background: rgba(color-function($verde, A900), 0.15);
+      border-radius: 100%;
+      transition: width 150ms ease, height 150ms ease;
+    }
+
+    &:focus,
+    &:hover {
+      background: transparent;
+    }
+
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .p-button.terciario {
+    border: 1px solid #cacaca;
+    line-height: 1.25;
+    background: transparent;
+    color: #cacaca;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    position: relative;
+    transition: background-color 500ms ease;
+    overflow: hidden;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid #cacaca;
+      color: #cacaca;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -30%, 0);
+      background: rgba(color-function($verde, A900), 0.15);
+      border-radius: 100%;
+      transition: width 150ms ease, height 150ms ease;
+    }
+
+    &:focus,
+    &:hover {
+      background: transparent;
+    }
+
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .p-button.laranja {
+    border: none;
+    background: color-function($laranja, 300);
+    color: color-function($branco, 500);
+    cursor: pointer;
+    outline: 0;
+
+    &:hover {
+      border: none;
+      background: color-function($laranja, 300);
+      color: color-function($branco, 500);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -30%, 0);
+      background: rgba(color-function($branco, 500), 0.15);
+      border-radius: 100%;
+      transition: width 150ms ease, height 150ms ease;
+    }
+
+    &:focus,
+    &:hover {
+      background: color-function($laranja, 300);
+    }
+
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .secundario.laranja {
+    line-height: 1.25;
+    background: transparent;
+    border: 1px solid color-function($laranja, 300);
+    text-decoration: none;
+    color: color-function($laranja, 300);
+    letter-spacing: 0.08em;
+    position: relative;
+    transition: background-color 500ms ease;
+    overflow: hidden;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid color-function($laranja, 300);
+      color: color-function($laranja, 300);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -30%, 0);
+      background: rgba(color-function($laranja, 300), 0.15);
+      border-radius: 100%;
+      transition: width 150ms ease, height 150ms ease;
+    }
+
+    &:focus,
+    &:hover {
+      background: transparent;
+    }
+
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .p-button.vermelho {
+    line-height: 1.25;
+    background: color-function($vermelho, 500);
+    border-color: color-function($vermelho, 500);
+    text-decoration: none;
+    color: color-function($branco, 500);
+    letter-spacing: 0.08em;
+    position: relative;
+    transition: background-color 500ms ease;
+    overflow: hidden;
+
+    &:hover {
+      background-color: color-function($vermelho, 500);
+      border-color: color-function($vermelho, 500);
+      color: color-function($branco, 500);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -30%, 0);
+      background: rgba(color-function($branco, 500), 0.15);
+      border-radius: 100%;
+      transition: width 150ms ease, height 150ms ease;
+    }
+
+    &:focus,
+    &:hover {
+      background: color-function($vermelho, 500);
+    }
+
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .secundario.vermelho {
+    line-height: 1.25;
+    background: transparent;
+    border: 1px solid color-function($vermelho, 500);
+    text-decoration: none;
+    color: color-function($vermelho, 500);
+    letter-spacing: 0.08em;
+    position: relative;
+    transition: background-color 500ms ease;
+    overflow: hidden;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid color-function($vermelho, 500);
+      color: color-function($vermelho, 500);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -30%, 0);
+      background: rgba(color-function($vermelho, 500), 0.15);
+      border-radius: 100%;
+      transition: width 150ms ease, height 150ms ease;
+    }
+
+    &:focus,
+    &:hover {
+      background: transparent;
+    }
+
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .p-button.bt_tabela_CSV {
+    background: color-function($branco, 500);
+    border: 2px solid color-function($verde, 300);
+    color: #616161;
+    &:hover {
+      background: color-function($verde, 300);
+      color: color-function($branco, 500);
+    }
+  }
+
+  .p-button.bt_tabela_EXCEL {
+    background: color-function($branco, 500);
+    border: 2px solid color-function($verde, A800);
+    color: #616161;
+    &:hover {
+      background: color-function($verde, A800);
+      color: color-function($branco, 500);
+    }
+  }
+
+  .p-button.bt_tabela_PDF {
+    background: color-function($branco, 500);
+    border: 2px solid color-function($vermelho, A800);
+    color: #616161;
+    &:hover {
+      background: color-function($vermelho, A800);
+      color: color-function($branco, 500);
+    }
+  }
+
+  .p-button-icon-left {
+    left: 1em;
+  }
+
+  @media only screen and (max-width: 640px) {
+    .bt_tabela_CSV {
+      float: left !important;
+    }
+  }
+}

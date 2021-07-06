@@ -1,0 +1,97 @@
+@import "./palhetas.scss";
+@import "./util.scss";
+
+body {
+  .p-field {
+    margin-bottom: 1rem;
+    margin: 0 0.5rem 0 0.5rem;
+
+    .p-inputtext {
+      background: white;
+      border-radius: 0.3rem;
+      width: 100%;
+      line-height: 1.4em;
+      padding: 0.638em;
+      box-shadow: 1px 1px 1px #c6c6c6;
+      border: 0 solid #a6a6a6;
+      transition: border-color 0.2s;
+      outline: 0;
+      &:hover {
+        box-shadow: 1px 1px 1px #c6c6c6;
+      }
+      &:focus {
+        box-shadow: 1px 1px 1px #c6c6c6;
+      }
+    }
+
+    .p-inputtext.ng-dirty.ng-invalid {
+      border: none;
+      border-bottom: 1px solid color-function($vermelho, 500);
+      box-shadow: 0 1px 0 0 color-function($vermelho, 500);
+      border-radius: 0;
+      border-radius: 0.3rem;
+      &:hover {
+        border-color: color-function($vermelho, 500);
+      }
+    }
+
+    .p-inputtext.ng-invalid.ng-touched {
+      border: none;
+      border-bottom: 1px solid color-function($vermelho, 500);
+      box-shadow: 0 1px 0 0 color-function($vermelho, 500);
+      border-radius: 0;
+      border-radius: 0.3rem;
+      &:hover {
+        border-color: color-function($vermelho, 500);
+      }
+    }
+
+    .input-campo__exibir {
+      border: 1px solid #454545;
+      border-radius: 5px;
+      width: 100%;
+      line-height: 1.4em;
+      padding: 0.638em;
+      outline: 0;
+    }
+
+    .adjInpText {
+      background: #d4d4d4;
+    }
+
+    .p-field {
+      margin-bottom: 1rem;
+      margin: 0 0.5rem 0 0.5rem;
+    }
+    .lbl_inputs {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.6pt;
+      color: color-function($verde, A900);
+      font-family: "soletomedium", sans-serif;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+
+      > small {
+        padding-left: 5px;
+        color: color-function($vermelho, A800);
+        font-size: 0.6rem;
+        font-family: monospace;
+        margin-left: 8px;
+        padding: 3px;
+      }
+    }
+
+    .dica_inputs {
+      color: gray;
+      font-size: 0.8rem;
+      font-family: Roboto;
+    }
+
+    .notificacao_inputs_erro {
+      color: color-function($vermelho, A800);
+      font-size: 0.69rem;
+    }
+  }
+}

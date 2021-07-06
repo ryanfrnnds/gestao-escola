@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BootstrapComponent } from './bootstrap.component';
 import { HeaderModule } from './header/header.module';
 import { LoadingComponent } from './loading/loading.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,7 @@ import { LoadingComponent } from './loading/loading.component';
     BootstrapComponent, LoadingComponent
   ],
   imports: [
-    CommonModule, HeaderModule
+    CommonModule, HeaderModule, ReactiveFormsModule
   ],
  
   exports: [BootstrapComponent, LoadingComponent]

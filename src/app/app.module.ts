@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BootstrapModule } from './core/bootstrap/bootstrap.module';
 import { LoadingInterceptor } from './core/interceptors';
-import { DataService } from './data.service';
+import { DataService } from './core/angular-in-memory-web-api/data.service';
 
 @NgModule({
   declarations: [

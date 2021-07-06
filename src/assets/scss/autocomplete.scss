@@ -1,0 +1,18 @@
+@import "./palhetas.scss";
+@import "./util.scss";
+
+body {
+  .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:hover {
+    color: color-function($branco, 500) !important;
+    background-color: color-function($laranja, 100) !important;
+  }
+  p-autocomplete.ng-dirty.ng-invalid > .p-autocomplete > .p-inputtext {
+    border: none;
+    border-bottom: 1px solid color-function($vermelho, 500);
+    box-shadow: 0 1px 0 0 color-function($vermelho, 500);
+    border-radius: 0;
+    &:hover {
+      border-color: color-function($vermelho, 500);
+    }
+  }
+}

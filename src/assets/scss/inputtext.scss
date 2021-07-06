@@ -1,0 +1,88 @@
+@import "./palhetas.scss";
+@import "./util.scss";
+
+body {
+  .p-float-label {
+    margin-bottom: 30px;
+
+    + .box-mensage-error {
+      height: 30px;
+      width: 100%;
+      padding-left: 5px;
+      margin-top: -30px;
+      .p-message.p-message-error {
+        background-color: transparent;
+        border: 0 none;
+        color: color-function($vermelho, 500);
+        font-size: 0.75rem !important;
+        margin-left: -5px;
+        .p-message-icon {
+          display: none;
+        }
+      }
+    }
+
+    .p-inputtext {
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid color-function($verde, 500);
+      width: 100%;
+      &:enabled {
+        &:focus:not(.p-state-error) {
+          outline: 0 none;
+          outline-offset: 0;
+          -webkit-box-shadow: 0 1px 0 0rem color-function($verde, 500);
+          -moz-box-shadow: 0 1px 0 0rem color-function($verde, 500);
+          box-shadow: 0 1px 0 0rem color-function($verde, 500);
+          border: 0;
+        }
+        &:hover:not(.p-state-error) {
+          border-color: color-function($verde, 500);
+        }
+      }
+      &:focus {
+        .ng-dirty.ng-invalid {
+          border: none;
+          border-bottom: 1px solid color-function($vermelho, 500);
+          box-shadow: 0 1px 0 0 color-function($vermelho, 500);
+          border-radius: 0;
+        }
+      }
+      &:disabled {
+        border-bottom: 2px dotted color-function($verde, 300);
+      }
+    }
+
+    .p-inputtext.ng-dirty.ng-invalid {
+      border: none;
+      border-bottom: 1px solid color-function($vermelho, 500);
+      box-shadow: 0 1px 0 0 color-function($vermelho, 500);
+      border-radius: 0;
+      &:hover {
+        border-color: color-function($vermelho, 500);
+      }
+    }
+
+    .p-inputtext.ng-invalid.ng-touched {
+      border: none;
+      border-bottom: 1px solid color-function($vermelho, 500);
+      box-shadow: 0 1px 0 0 color-function($vermelho, 500);
+      border-radius: 0;
+      &:hover {
+        border-color: color-function($vermelho, 500);
+      }
+    }
+
+    .ng-dirty.ng-invalid + label,
+    .ng-invalid.ng-touched + label {
+      color: color-function($vermelho, 500);
+    }
+  }
+}
+
+body .p-float-label .p-inputtext:focus.ng-dirty.ng-invalid {
+  border: none;
+  border-bottom: 1px solid color-function($vermelho, 500);
+  box-shadow: 0 1px 0 0 color-function($vermelho, 500);
+  border-radius: 0;
+}

@@ -15,190 +15,190 @@ export class DataService implements InMemoryDbService {
     const estudante = this.estudantes();
     const materia = this.materias();
     const professor = this.professores();
-    const relacionamento = this.relacionamentos();
+    const relacionomento = this.relacionomentos();
     return {
-      classe, serie,estudante, materia, professor, relacionamento
+      classe, serie,estudante, materia, professor, relacionomento
     };
 }
 
-  public classes():Array<{id:number, name:string}>{
+  public classes():Array<{id:number, nome:string}>{
     return [
       {
         id: 1,
-        name: 'A',
+        nome: 'A',
       },
       {
         id: 2,
-        name: 'B'
+        nome: 'B'
       },
       {
         id: 3,
-        name: 'C',
+        nome: 'C',
       },
       {
         id: 4,
-        name: 'D',
+        nome: 'D',
       },
       {
         id: 5,
-        name: 'E',
+        nome: 'E',
       },
       {
         id: 6,
-        name: 'F',
+        nome: 'F',
       }
     ];
   }
 
-  public series():Array<{id:number, name:string}>{
+  public series():Array<{id:number, nome:string}>{
     return [
       {
         "id":1,
-        "name":"Ensino Fundamental"
+        "nome":"Ensino Fundamental"
       },
       {
         "id":2,
-        "name":"1° ano do ensino médio"
+        "nome":"1° ano do ensino médio"
       },
       {
         "id":3,
-        "name":"2° ano ensino médio"
+        "nome":"2° ano ensino médio"
       },
       {
         "id":4,
-        "name":"3° ano do ensino médio"
+        "nome":"3° ano do ensino médio"
       },
       {
         "id":5,
-        "name":"Cursinho"
+        "nome":"Cursinho"
       },
       {
         "id":8,
-        "name":"4º ano do ensino fundamental"
+        "nome":"4º ano do ensino fundamental"
       },
       {
         "id":9,
-        "name":"5º ano do ensino fundamental"
+        "nome":"5º ano do ensino fundamental"
       },
       {
         "id":10,
-        "name":"6º ano do ensino fundamental"
+        "nome":"6º ano do ensino fundamental"
       },
       {
         "id":11,
-        "name":"7º ano do ensino fundamental"
+        "nome":"7º ano do ensino fundamental"
       },
       {
         "id":12,
-        "name":"8º ano do ensino fundamental"
+        "nome":"8º ano do ensino fundamental"
       },
       {
         "id":13,
-        "name":"9º ano do ensino fundamental"
+        "nome":"9º ano do ensino fundamental"
       },
       {
         "id":6,
-        "name":"Estudo em casa"
+        "nome":"Estudo em casa"
       },
       {
         "id":7,
-        "name":"Outros"
+        "nome":"Outros"
       }
     ];
   }
 
-  public materias():Array<{id:number, name:string}>{
+  public materias():Array<{id:number, nome:string}>{
     return [
       {
         "id":1,
-        "name":"Matemática"
+        "nome":"Matemática"
       },
       {
         "id":2,
-        "name":"Português"
+        "nome":"Português"
       },
       {
         "id":3,
-        "name":"História"
+        "nome":"História"
       },
       {
         "id":4,
-        "name":"Geografia"
+        "nome":"Geografia"
       }
     ];
   }
 
-  public estudantes():Array<{id: number, ra:number, name: string, serieId:number, classeId: number}>{
+  public estudantes():Array<{id: number, ra:number, nome: string, serieId:number, classeId: number}>{
     return [
         {
           "id":1,
           "ra":12346,
-          "name":"Nome do aluno 1",
+          "nome":"Nome do aluno 1",
           "serieId":1,
           "classeId":1
         },
         {
           "id":2,
           "ra":456798,
-          "name":"Nome do aluno 2",
+          "nome":"Nome do aluno 2",
           "serieId":2,
           "classeId":1
         },
         {
           "id":3,
           "ra":752156,
-          "name":"Nome do aluno 3",
+          "nome":"Nome do aluno 3",
           "serieId":3,
           "classeId":2
         },
         {
           "id":4,
           "ra":852348,
-          "name":"Nome do aluno 4",
+          "nome":"Nome do aluno 4",
           "serieId":4,
           "classeId":2
         },
         {
           "id":5,
           "ra":454643,
-          "name":"Nome do aluno 5",
+          "nome":"Nome do aluno 5",
           "serieId":6,
             "classeId":2
         }
     ]
   }
 
-  public professores():Array<{id: number, name: string}>{
+  public professores():Array<{id: number, nome: string}>{
     return [
       {
         "id":1,
-        "name":"Professor 1"
+        "nome":"Professor 1"
       },
       {
         "id":2,
-        "name":"Professor 2"
+        "nome":"Professor 2"
       },
       {
         "id":3,
-        "name":"Professor 3"
+        "nome":"Professor 3"
       },
       {
         "id":4,
-        "name":"Professor 4"
+        "nome":"Professor 4"
       },
       {
         "id":5,
-        "name":"Professor 5"
+        "nome":"Professor 5"
       },
       {
         "id":6,
-        "name":"Professor 6"
+        "nome":"Professor 6"
       }
     ]
   }
 
 
-  public relacionamentos():Array<{id: number, professorId: number, materiaId: number, series: Array<{serieId: number, classes:Array<{classeId: number}>}>}>{
+  public relacionomentos():Array<{id: number, professorId: number, materiaId: number, series: Array<{serieId: number, classes:Array<{classeId: number}>}>}>{
     return [
       {
         "id": 1,

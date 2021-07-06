@@ -3,13 +3,7 @@
 @import "~primeng-lts/resources/primeng.min.css";
 @import "~primeflex/primeflex.css";
 
-.tituloArea {
-    font-family: "soletomedium", sans-serif;
-    font-size: 1.6rem;
-    color: #2d6754;
-    text-shadow: 1px 1px 2px #ffffffb3;
-    text-transform: uppercase;
-    display: inline-flex;
-    margin-right: 20px;
-    vertical-align: sub;
-  }
+@import "./assets/scss/inputtext.scss";
+@import "./assets/scss/inputTextBasic.scss";
+@import "./assets/scss/autocomplete.scss";
+@import "./assets/scss/button.scss";
