@@ -6,7 +6,8 @@
         style="margin-right: 0.5em;" (click)="baixarPdf()"></button>
 </div>
 -->
-<p-table [value]="estudantes" [responsive]="true" [columns]="colunas" [paginator]="true" [rows]="5" [showCurrentPageReport]="true">
+<p-table #tabela [value]="estudantes" [responsive]="true" [columns]="colunas" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
+    currentPageReportTemplate="{first} de {last} de um total de {totalRecords}">
 
     <ng-template pTemplate="header" let-columns>
         <tr>

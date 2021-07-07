@@ -35,8 +35,7 @@ export class EstudanteComponent implements OnInit {
 
     this.series = this.route.snapshot.data.series;
     this.classes = this.route.snapshot.data.classes;
-
-    this.pesquisar();
+    this.service.subjectPesquisar.next(true);
     this.service.pesquisarObservable.subscribe(ehPesquisar => {
       if(ehPesquisar) {
         this.pesquisar();
@@ -44,7 +43,7 @@ export class EstudanteComponent implements OnInit {
       }
     })
 
-    this.gerarGrafico();
+    
   }
   private gerarGrafico() {
     const labels:Array<String> = [];

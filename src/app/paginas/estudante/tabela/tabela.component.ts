@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Estudante } from '@entidade';
 import { ClasseService } from '@services';
 import { ObjectUtil } from '@util';
+import { Table } from 'primeng-lts/table';
+import { EstudanteService } from '../estudante.service';
 
 @Component({
   selector: 'app-estudante-tabela',
@@ -12,6 +14,8 @@ export class TabelaComponent implements OnInit {
 
   public colunas: Array<{field: string, header:string}>;
 
+  @ViewChild('tabela', {static: true}) tabela: Table;
+
   @Input()
 	public estudantes = new Array<Estudante>();
 
@@ -21,10 +25,16 @@ export class TabelaComponent implements OnInit {
   @Output()
 	public aoRemover = new EventEmitter();
 
-  constructor( private classeService:ClasseService) { }
+  constructor( private estudanteService:EstudanteService) { }
 
   ngOnInit(): void {
     this.constuirColunas();
+
+    this.estudanteService.pesquisarObservable.subscribe(ehPesquisar => {
+      if(ehPesquisar) {
+        this.tabela.reset();
+      }
+    });
   }
 
   public buscarValor(item: any) {
