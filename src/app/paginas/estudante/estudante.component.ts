@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Classe, Estudante, EstudanteBDMemory, EstudanteFiltro, Serie } from '@entidade';
+import { Classe, Estudante, EstudanteFiltro, Serie } from '@entidade';
 import { ClasseService, SerieService } from '@services';
-import { forkJoin } from 'rxjs';
 import { EstudanteService } from './estudante.service';
 
 @Component({
@@ -44,7 +43,9 @@ export class EstudanteComponent implements OnInit {
 
   public pesquisar(): void {
     const estudantes: Array<Estudante> = [];
-		this.service.buscar(new EstudanteFiltro(this.formulario.getRawValue())).subscribe(estudantesBDMemory => {
+    const filtro = new EstudanteFiltro(this.formulario.getRawValue());
+
+		this.service.buscar(filtro).subscribe(estudantesBDMemory => {
       const estudantes = new Array<Estudante>();
       estudantesBDMemory.forEach(estudanteBDMemory => {
         const estudante = new Estudante(estudanteBDMemory);

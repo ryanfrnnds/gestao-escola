@@ -4,7 +4,7 @@ import { ClasseService } from '@services';
 import { ObjectUtil } from '@util';
 
 @Component({
-  selector: 'app-tabela',
+  selector: 'app-estudante-tabela',
   templateUrl: './tabela.component.html',
   styleUrls: ['./tabela.component.scss']
 })
@@ -22,7 +22,6 @@ export class TabelaComponent implements OnInit {
   }
 
   public buscarValor(item: any) {
-    // console.log(typeof item);
     if (typeof item == 'object') {
       return ObjectUtil.buscarValor(item, 'nome', '');
     }

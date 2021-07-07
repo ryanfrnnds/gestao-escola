@@ -1,0 +1,48 @@
+<div class="content">
+    <p-card header="DADOS DO ESTUDANTE">
+        <form [formGroup]="formulario" (submit)="false">
+            <div class="p-grid">
+                <!--
+                <div class="p-col-12 p-md-6 p-lg-3">
+                    <div class="p-field">
+                        <label for="idTipoPesquisador" class="lbl_inputs">VOCÊ É BRASILEIRO OU
+                            ESTRANGEIRO<small>"Obrigatório"</small></label>
+                        <p-dropdown id="idTipoPesquisador" [placeholder]="'&nbsp;'" [options]="listaTipoPesquisador"
+                            formControlName="ra" optionLabel="descricao" [filter]="false" #varTipoPesquisador
+                            (onChange)="alterarEndereco(varTipoPesquisador.value)">
+                        </p-dropdown>
+                    </div>
+                </div>
+                -->
+
+                <div class="p-col-12 p-md-6 p-lg-6">
+                    <div class="p-field">
+                        <label for="idNome" class="lbl_inputs">NOME COMPLETO<small>"Obrigatório"</small></label>
+                        <input id="idNome" type="text" pInputText formControlName="nome" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </p-card>
+
+    <!--
+    <div class="p-grid p-justify-end">
+        <div>
+            <p-confirmDialog #cadastrar key="cadastrar" header="Confirmation" icon="pi pi-exclamation-triangle">
+                <p-footer>
+                    <button type="button" pButton icon="pi pi-check" label="Sim" (click)="cadastrar.accept()"></button>
+                    <button type="button" pButton icon="pi pi-times" label="Não" class="secundario vermelho"
+                        (click)="cadastrar.reject()"></button>
+                </p-footer>
+            </p-confirmDialog>
+            <button pButton type="button" id="btnLimpar" icon="pi pi-times" label="Cancelar" class="secundario"></button>
+            <button pButton type="button" icon="pi pi-save" iconPos="left" label=" Salvar">
+            </button>
+        </div>
+    </div>
+-->
+</div>
+
+<!--
+<p-confirmDialog icon="pi pi-exclamation-triangle"></p-confirmDialog>
+-->

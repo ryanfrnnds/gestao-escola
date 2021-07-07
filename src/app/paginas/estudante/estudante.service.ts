@@ -14,19 +14,19 @@ export class EstudanteService {
 
 
   buscar(filtro:EstudanteFiltro = null): Observable<EstudanteBDMemory[]> {
-    const possuiFiltro = ObjectUtil.possuiValor(filtro, 'serieId') || ObjectUtil.possuiValor(filtro, 'classeId');
-    if(!possuiFiltro) {
-      return this.buscarTodos();
+    if(ObjectUtil.possuiAlgumAtributoComValor<EstudanteFiltro>(filtro)) {
+       const params = HttpParamUtil.criarParams<EstudanteFiltro>(filtro);
+      return this.http.get<any[]>(this.url, {params}).pipe(
+        retry(2),
+        catchError((error: HttpErrorResponse) => {
+          console.error(error);
+          return throwError(error);
+        })
+      );
     }
-    const params = HttpParamUtil.criarParams<EstudanteFiltro>(filtro);
-    return this.http.get<any[]>(this.url, {params}).pipe(
-      retry(2),
-      catchError((error: HttpErrorResponse) => {
-        console.error(error);
-        return throwError(error);
-      })
-    );
+    return this.buscarTodos();
   }
+
 
    private buscarTodos(): Observable<EstudanteBDMemory[]> {
     return this.http.get<EstudanteBDMemory[]>(this.url).pipe(

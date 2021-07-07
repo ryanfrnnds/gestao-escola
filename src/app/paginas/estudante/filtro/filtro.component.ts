@@ -4,7 +4,7 @@ import { Classe, Serie } from '@entidade';
 import { FormUtil } from '@util';
 
 @Component({
-  selector: 'app-filtro',
+  selector: 'app-estudante-filtro',
   templateUrl: './filtro.component.html',
   styleUrls: ['./filtro.component.scss']
 })

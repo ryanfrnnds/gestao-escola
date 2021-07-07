@@ -50,4 +50,16 @@ export class ObjectUtil {
     const valor = ObjectUtil.buscarValor(item, atributo, null);
     return valor != null;
   }
+
+  public static possuiAlgumAtributoComValor<T>(item: T): boolean {
+    for (const key in item) {
+      if (Object.prototype.hasOwnProperty.call(item, key)) {
+        const element = item[key];
+        if (element != null) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 }
