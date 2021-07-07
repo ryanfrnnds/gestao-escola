@@ -1,3 +1,5 @@
+$margim-padrao: 0.5rem;
+
 @import "~primeicons/primeicons.css";
 @import "~primeng-lts/resources/themes/nova/theme.css";
 @import "~primeng-lts/resources/primeng.min.css";
@@ -9,3 +11,9 @@
 @import "./assets/scss/card.scss";
 @import "./assets/scss/button.scss";
 @import "./assets/scss/table.scss";
+
+body {
+  .p-grid {
+    margin: $margim-padrao $margim-padrao $margim-padrao $margim-padrao;
+  }
+}
