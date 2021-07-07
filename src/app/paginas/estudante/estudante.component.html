@@ -4,10 +4,10 @@
 </div>
 <div class="p-grid" *ngIf="true">
   <div class="p-col-12">
-    <app-estudante-tabela [estudantes]="estudantes" *ngIf="estudantes?.length">
+    <app-estudante-tabela [estudantes]="estudantes" [classes]="classes" *ngIf="estudantes?.length">
     </app-estudante-tabela>
   </div>
 </div>
 
-<app-estudante-edicao>
+<app-estudante-edicao [series]="series" [classes]="classes">
 </app-estudante-edicao>

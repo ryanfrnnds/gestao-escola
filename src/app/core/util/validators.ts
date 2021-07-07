@@ -18,7 +18,7 @@ enum MensagemError {
   telefoneCelularInvalido = 'Atenção, após o DDD, telefones celulares iniciam com o número 9. Ex: (85) 9xxxx-xxxx',
 }
 // @dynamic
-export class SesaValidators extends Validators {
+export class CoreValidators extends Validators {
   static get required(): ValidatorFn {
     return (
       control: AbstractControl

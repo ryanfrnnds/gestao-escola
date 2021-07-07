@@ -2,23 +2,35 @@
     <p-card header="DADOS DO ESTUDANTE">
         <form [formGroup]="formulario" (submit)="false">
             <div class="p-grid">
-                <!--
-                <div class="p-col-12 p-md-6 p-lg-3">
+                <div class="p-col-12 p-md-6 p-lg-6">
                     <div class="p-field">
-                        <label for="idTipoPesquisador" class="lbl_inputs">VOCÊ É BRASILEIRO OU
-                            ESTRANGEIRO<small>"Obrigatório"</small></label>
-                        <p-dropdown id="idTipoPesquisador" [placeholder]="'&nbsp;'" [options]="listaTipoPesquisador"
-                            formControlName="ra" optionLabel="descricao" [filter]="false" #varTipoPesquisador
-                            (onChange)="alterarEndereco(varTipoPesquisador.value)">
-                        </p-dropdown>
+                        <label for="idRa" class="lbl_inputs">RA<small>"Obrigatório"</small></label>
+                        <input id="idRa" type="text" pInputText formControlName="ra" autocomplete="off" />
                     </div>
                 </div>
-                -->
 
                 <div class="p-col-12 p-md-6 p-lg-6">
                     <div class="p-field">
                         <label for="idNome" class="lbl_inputs">NOME COMPLETO<small>"Obrigatório"</small></label>
                         <input id="idNome" type="text" pInputText formControlName="nome" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-6 p-lg-6">
+                    <div class="p-field">
+                        <label for="idSeries" class="lbl_inputs">
+                            SÉRIE<small>"Obrigatório"</small></label>
+                        <p-dropdown id="idSeries" [options]="series" formControlName="serie" optionLabel="nome" [filter]="true">
+                        </p-dropdown>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-6 p-lg-6">
+                    <div class="p-field">
+                        <label for="idClasses" class="lbl_inputs">
+                            CLASSE<small>"Obrigatório"</small></label>
+
+                        <p-dropdown id="idClasses" [placeholder]="'&nbsp;'" [options]="classes" [showClear]="true" formControlName="classe"
+                            optionLabel="nome" [filter]="true">
+                        </p-dropdown>
                     </div>
                 </div>
             </div>

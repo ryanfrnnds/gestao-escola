@@ -18,7 +18,7 @@ export class EstudanteComponent implements OnInit {
   public classes: Array<Classe>;
   public estudantes: Array<Estudante>;
 
-  constructor(private service: EstudanteService, private classeService: ClasseService, private serieService: SerieService, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
+  constructor(private service: EstudanteService, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.criarFormulario();
@@ -42,15 +42,12 @@ export class EstudanteComponent implements OnInit {
 	}
 
   public pesquisar(): void {
-    const estudantes: Array<Estudante> = [];
     const filtro = new EstudanteFiltro(this.formulario.getRawValue());
 
 		this.service.buscar(filtro).subscribe(estudantesBDMemory => {
       const estudantes = new Array<Estudante>();
       estudantesBDMemory.forEach(estudanteBDMemory => {
-        const estudante = new Estudante(estudanteBDMemory);
-        estudante.classe = this.classes.filter(classe => classe.id == estudanteBDMemory.classeId)[0];
-        estudante.serie = this.series.filter(serie => serie.id == estudanteBDMemory.serieId)[0];
+        const estudante = new Estudante(estudanteBDMemory, this.classes, this.series);
         estudantes.push(estudante);
       });
       this.estudantes = estudantes;
