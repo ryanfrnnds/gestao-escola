@@ -29,7 +29,8 @@ export class EstudanteComponent implements OnInit {
 
   private criarFormulario(): void {
 		this.formulario = this.formBuilder.group({
-			serie: [null]
+			serie: [null],
+      classe: [null]
 		});
 	}
 

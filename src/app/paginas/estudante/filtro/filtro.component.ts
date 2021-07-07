@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Serie } from '@entidade';
+import { Classe, Serie } from '@entidade';
 import { FormUtil } from '@util';
 
 @Component({
@@ -15,6 +15,9 @@ export class FiltroComponent implements OnInit {
 
   @Input()
   public series = new Array<Serie>();
+
+  @Input()
+  public classes = new Array<Classe>();
 
   @Output()
 	private aoPesquisar = new EventEmitter();
