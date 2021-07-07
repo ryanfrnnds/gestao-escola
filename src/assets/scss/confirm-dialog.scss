@@ -6,8 +6,11 @@ body {
       &.p-button {
         &:not(.p-button-icon-only) {
           background: white;
-          color: color-function($verde, 500);
-          border: solid 1px color-function($verde, 500);
+          color: color-function($azul, 50);
+          border: solid 1px color-function($azul, 50);
+        }
+        &:hover {
+          border: solid 1px color-function($azul, 500);
         }
       }
     }
@@ -20,7 +23,7 @@ body {
       }
     }
     & .p-dialog-content {
-      border-top: 2px solid color-function($laranja, 700);
+      border-top: 2px solid color-function($azul, 50);
       border-bottom: none;
       border-left: none;
       border-right: none;

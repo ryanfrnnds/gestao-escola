@@ -2,7 +2,7 @@
   <app-estudante-filtro [formulario]="formulario" [series]="series" [classes]="classes" (aoPesquisar)="pesquisar()" (aoLimpar)="limpar()">
   </app-estudante-filtro>
 </div>
-<div class="p-grid" *ngIf="true">
+<div class="p-grid">
   <div class="p-col-12">
     <app-estudante-tabela [estudantes]="estudantes" [classes]="classes" *ngIf="estudantes?.length">
     </app-estudante-tabela>
