@@ -11,6 +11,8 @@ $margim-padrao: 0.5rem;
 @import "./assets/scss/card.scss";
 @import "./assets/scss/button.scss";
 @import "./assets/scss/table.scss";
+@import "./assets/scss/toastr.scss";
+@import "./assets/scss/confirm-dialog.scss";
 
 body {
   .p-grid {

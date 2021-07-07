@@ -1,8 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Classe, Estudante, EstudanteFiltro, Serie } from '@entidade';
-import { CoreValidators } from '@util';
+import { CoreValidators, FormUtil } from '@util';
+import { ToastrService } from 'src/app/core/toastr';
 import { EstudanteService } from '../estudante.service';
+
+import { ConfirmationService } from 'primeng-lts/api';
 
 @Component({
   selector: 'app-estudante-edicao',
@@ -23,7 +26,7 @@ export class EdicaoComponent implements OnInit {
   public formulario: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder, private estudanteService: EstudanteService) { }
+  constructor(private formBuilder: FormBuilder, private estudanteService: EstudanteService, private toastr: ToastrService, private confirmacaoService: ConfirmationService) { }
 
   ngOnInit(): void {
     this.criarFormulario();
@@ -35,6 +38,25 @@ export class EdicaoComponent implements OnInit {
       this.formulario.get('serie').setValue(this.series.filter(serie => serie.id == estudante.serie.id)[0]);
       this.formulario.get('classe').setValue(this.classes.filter(classe => classe.id == estudante.classe.id)[0]);
     })
+  }
+
+  public salvar() {
+     if (this.formulario.invalid) {
+      this.toastr.warning('Favor preencher todos os campos obrigatórios');
+      FormUtil.marcarComoTocado(this.formulario);
+      return;
+    }
+    console.log('Cade o confirmDialog???');
+    this.confirmacaoService.confirm({
+      message: 'Tem certeza que deseja salvar?',
+      header: 'Confirmação Salvar',
+      acceptLabel: 'SIM',
+      rejectLabel: 'NÃO',
+      accept: () => {
+        console.log('SALVAR --> ', this.formulario.getRawValue());
+      },
+    });
+
   }
 
   private criarFormulario(): void {

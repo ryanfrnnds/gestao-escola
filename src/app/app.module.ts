@@ -11,6 +11,8 @@ import { DataService } from './core/angular-in-memory-web-api/data.service';
 
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import { ToastrModule } from './core/toastr/toastr.module';
+import { ConfirmationService } from 'primeng-lts/api';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -22,6 +24,7 @@ registerLocaleData(ptBr);
     AppRoutingModule,
     HttpClientModule,
     BootstrapModule,
+    ToastrModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService),
   ],
   providers: [
@@ -33,7 +36,8 @@ registerLocaleData(ptBr);
      {
       provide: LOCALE_ID,
       useValue: "pt-BR"
-    }
+    },
+    ConfirmationService
   ],
   bootstrap: [AppComponent]
 })

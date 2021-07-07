@@ -14,6 +14,7 @@ import {DropdownModule} from 'primeng-lts/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EdicaoComponent } from './edicao/edicao.component';
 import { InputTextModule } from 'primeng-lts/inputtext';
+import {ConfirmDialogModule} from 'primeng-lts/confirmdialog';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { InputTextModule } from 'primeng-lts/inputtext';
     TableModule,
     CardModule,
     InputTextModule,
+    ConfirmDialogModule,
 
     EstudanteRoutingModule
   ]

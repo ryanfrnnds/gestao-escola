@@ -1,0 +1,32 @@
+@import "./paletas.scss";
+@import "./util.scss";
+body {
+  .p-dialog {
+    .p-confirm-dialog-reject {
+      &.p-button {
+        &:not(.p-button-icon-only) {
+          background: white;
+          color: color-function($verde, 500);
+          border: solid 1px color-function($verde, 500);
+        }
+      }
+    }
+    .p-dialog-titlebar {
+      border: none;
+      background-color: color-function($verde, A900);
+      color: color-function($branco, 500);
+      & .p-dialog-titlebar-icon {
+        color: color-function($branco, 500);
+      }
+    }
+    & .p-dialog-content {
+      border-top: 2px solid color-function($laranja, 700);
+      border-bottom: none;
+      border-left: none;
+      border-right: none;
+    }
+    & .p-dialog-footer {
+      border: none;
+    }
+  }
+}
