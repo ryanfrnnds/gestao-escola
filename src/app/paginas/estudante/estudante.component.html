@@ -1,18 +1,26 @@
 <div *ngIf="!idEstudante">
-  <app-estudante-filtro [formulario]="formulario" [series]="series" [classes]="classes" (aoPesquisar)="pesquisar()" (aoLimpar)="limpar()">
+  <app-estudante-filtro *ngIf="mostrarFiltros" [formulario]="formulario" [series]="series" [classes]="classes" (aoPesquisar)="pesquisar()"
+    (aoLimpar)="limpar()">
   </app-estudante-filtro>
 
   <div class="p-grid p-justify-end">
     <button pButton id="btnGerarEstudantes" icon="pi pi-user" label="Gerar 300 estudantes"
       (click)="this.service.gerarMaisTrezentos()"></button>
+    <button pButton type="button" id="btnMostrarFiltros" icon="pi pi-search"
+      [label]="mostrarFiltros ? 'Esconder Filtros' : 'Mostrar Filtros'"
+      (click)="mostrarFiltros ? this.mostrarFiltros = false : this.mostrarFiltros = true " class="secundario"></button>
   </div>
 
   <div class="p-grid">
-    <div class="p-col-12">
+    <div class="p-col-12 p-md-12 p-lg-12">
+      <p-chart type="bar" [data]="data" height="30vh"></p-chart>
+    </div>
+    <div class="p-col-12 p-md-12 p-lg-12">
       <app-estudante-tabela *ngIf="estudantes?.length" [estudantes]="estudantes" [classes]="classes" (aoEditar)="editar($event)"
         (aoRemover)="remover($event)">
       </app-estudante-tabela>
     </div>
+
   </div>
 </div>
 

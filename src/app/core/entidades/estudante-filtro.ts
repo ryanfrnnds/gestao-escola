@@ -4,9 +4,9 @@ import { Estudante } from "./estudante";
 import { Serie } from "./serie";
 
 export class EstudanteFiltro{
-    public serieId:number;
-    public classeId: number;
-    public id: number;
+    public serieId?:number;
+    public classeId?: number;
+    public id?: number;
 
     constructor(referenciaDoFormularioNaPagina: Partial<Estudante>) {
         if (referenciaDoFormularioNaPagina) {

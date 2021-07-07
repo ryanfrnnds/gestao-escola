@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Classe, Estudante, EstudanteFiltro, Serie } from '@entidade';
+import { Classe, Estudante, EstudanteBDMemory, EstudanteFiltro, Serie } from '@entidade';
 import { ClasseService, SerieService } from '@services';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, forkJoin } from 'rxjs';
 import { ignoreElements } from 'rxjs/operators';
 import { ToastrService } from 'src/app/core/toastr';
 import { EstudanteService } from './estudante.service';
@@ -16,7 +16,10 @@ import { EstudanteService } from './estudante.service';
 })
 export class EstudanteComponent implements OnInit {
 
+  data: any;
+
   public idEstudante: number;
+  public mostrarFiltros = false;
   
   public formulario: FormGroup;
   public series: Array<Serie>;
@@ -26,6 +29,8 @@ export class EstudanteComponent implements OnInit {
   constructor(private service: EstudanteService, private formBuilder: FormBuilder, private route: ActivatedRoute, private toastrService:ToastrService) { }
 
   ngOnInit(): void {
+     
+
     this.criarFormulario();
 
     this.series = this.route.snapshot.data.series;
@@ -35,8 +40,38 @@ export class EstudanteComponent implements OnInit {
     this.service.pesquisarObservable.subscribe(ehPesquisar => {
       if(ehPesquisar) {
         this.pesquisar();
+        this.gerarGrafico();
       }
     })
+
+    this.gerarGrafico();
+  }
+  private gerarGrafico() {
+    const labels:Array<String> = [];
+    const quantidadeAlunosPorSerie:Array<number> = [];
+    let observables = [];
+    this.series.forEach(serie => {
+      labels.push(serie.nome);
+      observables.push(this.service.buscar({id: serie.id}));
+    });
+
+    forkJoin(observables
+    ).subscribe(forkJoin => {
+      forkJoin.forEach((element:Array<EstudanteBDMemory>) => {
+        quantidadeAlunosPorSerie.push(element.length);
+      });
+      this.data = {
+        labels: labels,
+        datasets: [
+          {
+              label: 'Alunos',
+              backgroundColor: '#42A5F5',
+              borderColor: '#1E88E5',
+              data: quantidadeAlunosPorSerie
+          }
+        ]
+      }
+    });
   }
 
   public editar(item: Estudante) {
