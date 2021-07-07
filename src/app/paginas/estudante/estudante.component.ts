@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Classe, Estudante, EstudanteFiltro, Serie } from '@entidade';
 import { ClasseService, SerieService } from '@services';
+import { BehaviorSubject } from 'rxjs';
+import { ignoreElements } from 'rxjs/operators';
 import { ToastrService } from 'src/app/core/toastr';
 import { EstudanteService } from './estudante.service';
 
@@ -13,6 +15,7 @@ import { EstudanteService } from './estudante.service';
   providers: [EstudanteService]
 })
 export class EstudanteComponent implements OnInit {
+
   public idEstudante: number;
   
   public formulario: FormGroup;
@@ -29,6 +32,11 @@ export class EstudanteComponent implements OnInit {
     this.classes = this.route.snapshot.data.classes;
 
     this.pesquisar();
+    this.service.pesquisarObservable.subscribe(ehPesquisar => {
+      if(ehPesquisar) {
+        this.pesquisar();
+      }
+    })
   }
 
   public editar(item: Estudante) {

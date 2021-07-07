@@ -2,6 +2,11 @@
   <app-estudante-filtro [formulario]="formulario" [series]="series" [classes]="classes" (aoPesquisar)="pesquisar()" (aoLimpar)="limpar()">
   </app-estudante-filtro>
 
+  <div class="p-grid p-justify-end">
+    <button pButton id="btnGerarEstudantes" icon="pi pi-user" label="Gerar 300 estudantes"
+      (click)="this.service.gerarMaisTrezentos()"></button>
+  </div>
+
   <div class="p-grid">
     <div class="p-col-12">
       <app-estudante-tabela *ngIf="estudantes?.length" [estudantes]="estudantes" [classes]="classes" (aoEditar)="editar($event)"

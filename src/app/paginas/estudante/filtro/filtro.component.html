@@ -1,5 +1,5 @@
 <p-card>
-  <form [formGroup]="formulario" (ngSubmit)="pesquisar()">
+  <form [formGroup]="formulario" (ngSubmit)="false">
     <div class="p-grid">
       <div class="p-col-12 p-md-6 p-lg-6">
         <div class="p-field">
@@ -28,12 +28,12 @@
         </div>
       </div>
     </div>
-    <p-footer>
-      <div class="p-grid p-justify-end">
-        <button pButton type="submit" id="btnPesquisar" icon="pi pi-search" label="Pesquisar"></button>
-        <button pButton type="button" id="btnLimpar" icon="pi pi-times" label="Limpar" (click)="limpar()" class="secundario"></button>
-      </div>
-    </p-footer>
   </form>
+  <p-footer>
+    <div class="p-grid p-justify-end">
+      <button pButton type="submit" id="btnPesquisar" icon="pi pi-search" label="Pesquisar" (click)="pesquisar()"></button>
+      <button pButton type="button" id="btnLimpar" icon="pi pi-times" label="Limpar" (click)="limpar()" class="secundario"></button>
+    </div>
+  </p-footer>
 
 </p-card>

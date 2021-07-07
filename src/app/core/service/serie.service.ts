@@ -30,7 +30,7 @@ export class SerieService {
     );
   }
 
-  buscarTodos(): Observable<Serie[]> {
+  private buscarTodos(): Observable<Serie[]> {
     return this.http.get<Serie[]>(this.url).pipe(
       retry(2),
       catchError((error: HttpErrorResponse) => {
