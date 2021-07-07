@@ -4,12 +4,14 @@
 </div>
 <div class="p-grid">
   <div class="p-col-12">
-    <app-estudante-tabela [estudantes]="estudantes" [classes]="classes" *ngIf="estudantes?.length">
+    <app-estudante-tabela *ngIf="estudantes?.length" [estudantes]="estudantes" [classes]="classes" (aoEditar)="editar($event)"
+      (aoRemover)="remover($event)">
     </app-estudante-tabela>
   </div>
 </div>
 
-<app-estudante-edicao [series]="series" [classes]="classes">
+<app-estudante-edicao *ngIf="idEstudante" [series]="series" [classes]="classes" [idEstudante]="idEstudante" (aoSalvar)="salvar($event)"
+  (aoCancelar)="esconderEdicao()">
 </app-estudante-edicao>
 
 <p-confirmDialog icon="pi pi-exclamation-triangle"></p-confirmDialog>

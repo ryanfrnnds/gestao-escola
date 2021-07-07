@@ -17,15 +17,17 @@
 
     </ng-template>
 
-    <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <ng-template pTemplate="body" let-rowData let-item let-columns="columns">
         <tr style="text-align: center">
             <td *ngFor="let col of columns">
                 <div *ngIf="col.header !== 'AÇÕES'">
                     {{ buscarValor(rowData[col.field])}}
                 </div>
                 <div *ngIf="col.header === 'AÇÕES'" class="acoes">
-                    <button type="button" pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></button>
-                    <button type="button" pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+                    <button type="button" pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                        (click)="this.aoEditar.emit(item)"></button>
+                    <button type="button" pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                        (click)="this.aoRemover.emit(rowData)"></button>
 
                 </div>
             </td>

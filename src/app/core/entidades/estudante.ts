@@ -10,7 +10,7 @@ export class Estudante{
     public serie?:Serie; 
     public classe?:Classe;
 
-    constructor(estudanteBDMemory: Partial<EstudanteBDMemory>, classes: Array<Classe> , series: Array<Serie>) {
+    constructor(estudanteBDMemory: Partial<EstudanteBDMemory> = null, classes: Array<Classe> = null , series: Array<Serie> = null) {
         this.id = ObjectUtil.buscarValor(estudanteBDMemory, 'id');
         this.ra = ObjectUtil.buscarValor(estudanteBDMemory, 'ra');
         this.nome = ObjectUtil.buscarValor(estudanteBDMemory, 'nome');

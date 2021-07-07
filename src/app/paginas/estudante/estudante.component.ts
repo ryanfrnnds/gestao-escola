@@ -13,7 +13,8 @@ import { EstudanteService } from './estudante.service';
   providers: [EstudanteService]
 })
 export class EstudanteComponent implements OnInit {
-
+  public idEstudante: number;
+  
   public formulario: FormGroup;
   public series: Array<Serie>;
   public classes: Array<Classe>;
@@ -28,6 +29,32 @@ export class EstudanteComponent implements OnInit {
     this.classes = this.route.snapshot.data.classes;
 
     this.pesquisar();
+  }
+
+  public editar(item: Estudante) {
+    this.idEstudante = item.id;
+  }
+
+  public salvar(item: Estudante) {
+    this.esconderEdicao();
+    this.service.editar(item)
+      .subscribe({
+        next: data => {
+            this.toastrService.success('Registro salvo.');
+            this.pesquisar();
+        },
+        error: error => {
+            this.toastrService.error('Houve algum problema. Favor contate o suporte!');
+        }
+    });
+  }
+
+  public remover(item: any) {
+    this.toastrService.info( JSON.stringify(item) ,'Not Implement - Excluir');
+  }
+
+  public esconderEdicao() {
+    this.idEstudante = null;
   }
 
 

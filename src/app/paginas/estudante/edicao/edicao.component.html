@@ -19,7 +19,8 @@
                     <div class="p-field">
                         <label for="idSeries" class="lbl_inputs">
                             SÉRIE<small>"Obrigatório"</small></label>
-                        <p-dropdown id="idSeries" [options]="series" formControlName="serie" optionLabel="nome" [filter]="true">
+                        <p-dropdown id="idSeries" [options]="series" [placeholder]="'&nbsp;'" formControlName="serie" optionLabel="nome"
+                            [filter]="true" [showClear]="true">
                         </p-dropdown>
                     </div>
                 </div>
@@ -27,6 +28,8 @@
                     <div class="p-field">
                         <label for="idClasses" class="lbl_inputs">
                             CLASSE<small>"Obrigatório"</small></label>
+
+                        {{this.idEstudante}}
 
                         <p-dropdown id="idClasses" [placeholder]="'&nbsp;'" [options]="classes" [showClear]="true" formControlName="classe"
                             optionLabel="nome" [filter]="true">
@@ -40,7 +43,9 @@
     <div class="p-grid p-justify-end">
         <div>
             <button pButton type="button" icon="pi pi-save" iconPos="left" label=" Salvar" (click)="salvar()"></button>
-            <button pButton type="button" id="btnLimpar" icon="pi pi-times" label="Cancelar" class="secundario"></button>
+            <button pButton type="button" id="btnLimpar" icon="pi pi-times" label="Cancelar" class="secundario"
+                (click)="aoCancelar.emit()"></button>
+
         </div>
     </div>
 </div>

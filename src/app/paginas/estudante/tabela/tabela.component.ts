@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Estudante } from '@entidade';
 import { ClasseService } from '@services';
 import { ObjectUtil } from '@util';
@@ -14,6 +14,12 @@ export class TabelaComponent implements OnInit {
 
   @Input()
 	public estudantes = new Array<Estudante>();
+
+  @Output()
+	public aoEditar = new EventEmitter();
+
+  @Output()
+	public aoRemover = new EventEmitter();
 
   constructor( private classeService:ClasseService) { }
 
