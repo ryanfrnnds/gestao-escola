@@ -1,6 +1,6 @@
 <div *ngIf="!idEstudante">
-  <app-estudante-filtro *ngIf="mostrarFiltros" [formulario]="formulario" [series]="series" [classes]="classes" (aoPesquisar)="pesquisar()"
-    (aoLimpar)="limpar()">
+  <app-estudante-filtro *ngIf="mostrarFiltros" [formulario]="formulario" [series]="series" [classes]="classes"
+    (aoPesquisar)="this.service.subjectPesquisar.next(true);" (aoLimpar)="limpar()">
   </app-estudante-filtro>
 
   <div class="p-grid p-justify-end">
