@@ -1,0 +1,145 @@
+body {
+  .p-datatable {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+    .p-datatable-thead {
+      > tr {
+        > th {
+          padding: 1rem 1rem !important;
+          color: #dcdbdb;
+          background-color: color-function($azul, 50);
+          text-align: left;
+          text-transform: uppercase;
+          font-weight: bold;
+          border: 0px;
+          border-bottom: 1px solid #e6e6e6;
+        }
+      }
+      .sizaAcoes {
+        width: 10%;
+      }
+    }
+    .p-datatable-tbody {
+      > tr {
+        &:hover {
+          background-color: #e3f1ef !important;
+          cursor: pointer;
+        }
+        > td {
+          padding: 0.2rem 1rem;
+          border: none;
+          border-bottom: 1px solid #e6e6e6;
+          text-align: left;
+          .acoes {
+            button {
+              background-color: #e6e6e6 !important;
+              cursor: pointer;
+              color: color-function($azul, 50);
+              font-size: 1rem;
+              border: none;
+              border-radius: 10px;
+              margin-left: 5px;
+              &:hover {
+                background: color-function($azul, 50) !important;
+                color: color-function($branco, 500);
+                box-shadow: none;
+                border: none;
+              }
+              &:active {
+                background: transparent !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .p-paginator-bottom
+    .p-paginator-first:not(.p-disabled):not(.p-highlight):hover,
+  .p-paginator-bottom
+    .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover,
+  .p-paginator-bottom
+    .p-paginator-next:not(.p-disabled):not(.p-highlight):hover,
+  .p-paginator-bottom
+    .p-paginator-last:not(.p-disabled):not(.p-highlight):hover {
+    background-color: rgba(color-function($azul, 100), $alpha: 0.5);
+    color: color-function($branco, 50);
+  }
+
+  .p-paginator-bottom .p-paginator-pages .p-paginator-page.p-highlight {
+    background-color: color-function($azul, 50) !important;
+  }
+
+  .p-paginator-bottom .p-paginator-first,
+  .p-paginator-bottom .p-paginator-prev,
+  .p-paginator-bottom .p-paginator-next,
+  .p-paginator-bottom .p-paginator-last {
+    color: color-function($azul, 500);
+  }
+}
+
+//body .p-datatable .p-sortable-column.p-highlight
+@media only all {
+  th.p-p-6,
+  td.p-p-6,
+  th.p-p-5,
+  td.p-p-5,
+  th.p-p-4,
+  td.p-p-4,
+  th.p-p-3,
+  td.p-p-3,
+  th.p-p-2,
+  td.p-p-2,
+  th.p-p-1,
+  td.p-p-1 {
+    display: none;
+  }
+}
+
+/* Show priority 1 at 320px (20em x 16px) */
+@media screen and (min-width: 20em) {
+  th.p-p-1,
+  td.p-p-1 {
+    display: table-cell;
+  }
+}
+
+/* Show priority 2 at 480px (30em x 16px) */
+@media screen and (min-width: 30em) {
+  th.p-p-2,
+  td.p-p-2 {
+    display: table-cell;
+  }
+}
+
+/* Show priority 3 at 640px (40em x 16px) */
+@media screen and (min-width: 40em) {
+  th.p-p-3,
+  td.p-p-3 {
+    display: table-cell;
+  }
+}
+
+/* Show priority 4 at 800px (50em x 16px) */
+@media screen and (min-width: 50em) {
+  th.p-p-4,
+  td.p-p-4 {
+    display: table-cell;
+  }
+}
+
+/* Show priority 5 at 960px (60em x 16px) */
+@media screen and (min-width: 60em) {
+  th.p-p-5,
+  td.p-p-5 {
+    display: table-cell;
+  }
+}
+
+/* Show priority 6 at 1,120px (70em x 16px) */
+@media screen and (min-width: 70em) {
+  th.p-p-6,
+  td.p-p-6 {
+    display: table-cell;
+  }
+}

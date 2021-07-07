@@ -63,6 +63,35 @@ $verde: (
 	),
 );
 
+$azul: (
+	50: #09a5df,
+	100: #1E90FF,
+	200: #4169E1,
+	300: #6495ED,
+	400: #6495ED,
+	500: #0000FF,
+	600: #0000CD,
+	700: #00008B,
+	800: #000080,
+	900: #191970,
+	contrast: (
+		50: rgba(black, 0.87),
+		100: rgba(black, 0.87),
+		200: rgba(black, 0.87),
+		300: white,
+		400: white,
+		500: white,
+		600: white,
+		700: white,
+		800: white,
+		900: white,
+		A100: rgba(black, 0.87),
+		A200: white,
+		A400: white,
+		A700: white,
+	),
+);
+
 $vermelho: (
 	50: #ffebee,
 	100: #ffcdd2,
