@@ -1,27 +1,43 @@
 # GestaoEscola
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
+Oi pessoal tudo bom? Eu sou o Ryan Fernandes e esse aqui é um modelo de teste que vocês me passaram.
 
-## Development server
+Bom aqui eu utilizei o ANGULAR então pra RODAR o projeto vai ser necessário instalar ai o angular na versão 10 que foi a versão que eu utilizei pois eu também utilizei o PRIMENG para componentes e a versão LTS dele é a 10. Por tanto tenho que usar o angular 10 também.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Bora lá é rapidinho. Eu estou utilizando aqui o NODE no WINDOWNS então vou te mostrar um "Tutorial" rapido pra subir minha API nesse ambiente do WINDOWNS aqui com o angular. Mas sinta-se a vontade pra utilizar o que quiser...
 
-## Code scaffolding
+Acessa essa página e instala ai o NVM (Node Version Manager) 
+https://github.com/coreybutler/nvm-windows/releases
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Após instalar ele utliza o comando a baixo na mesma ordem tá?
+```js
+    nvm install 14.17.3
+    nvm use 14.17.3
+```
 
-## Build
+Pronto! agora o node ta instalado na versão que eu instalei aqui. Vamos seguir pro angular.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Baixou meu projeto aqui do GITHUB é só entrar na pasta raiz onde existe o PACKAGE.json. Depois é só
+rodar o comando
 
-## Running unit tests
+```js
+    npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Show de bola. Agora que os pacotes estão instalados vamos só precisar instalar a versão do ANGULAR.
+Rode o coando a baixo para instalo globalmente ou o comando posterior que é o NPX.
+em seguida usa o "ng s" pra poder rodar o projeto.
+```js
+    npm install @angular/cli@10 -g --save
+    ng s
+```
 
-## Running end-to-end tests
+NPX que pode reutilizar o angular do teu projeto ai que foi instalado com o npm install
+```js
+    npm install npx -g --save
+    npx ng s
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Com isso feito é só abrir o browser e acessar a url http://localhost:4200
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Pronto acredito que esteja tudo certo. Me deseje sorte hehe até mais!
