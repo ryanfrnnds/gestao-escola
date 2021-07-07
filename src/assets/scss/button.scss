@@ -50,7 +50,7 @@ body {
   .p-button {
     &:not(.p-button-icon-only) {
       border: none;
-      background: color-function($verde, A900);
+      background: color-function($azul, 50);
       color: color-function($branco, 500);
       cursor: pointer;
       outline: 0;
@@ -61,7 +61,7 @@ body {
 
       &:hover {
         border: none;
-        background: color-function($verde, A900);
+        background: color-function($azul, 300);
         color: color-function($branco, 500);
       }
 
@@ -79,9 +79,11 @@ body {
         transition: width 150ms ease, height 150ms ease;
       }
 
-      &:focus,
+      &:focus{
+        background: color-function($azul, 50);
+      }
       &:hover {
-        background: color-function($verde, A900);
+        background: color-function($azul, 500);
       }
 
       &:active {
@@ -123,9 +125,9 @@ body {
   .p-button.secundario {
     line-height: 1.25;
     background: transparent;
-    border: 1px solid color-function($verde, A900);
+    border: 1px solid color-function($azul, 50);
     text-decoration: none;
-    color: color-function($verde, A900);
+    color: color-function($azul, 50);
     letter-spacing: 0.08em;
     position: relative;
     transition: background-color 500ms ease;
@@ -133,8 +135,8 @@ body {
 
     &:hover {
       background-color: transparent;
-      border: 1px solid color-function($verde, A900);
-      color: color-function($verde, A900);
+      border: 1px solid color-function($azul, 500);
+      color: color-function($azul, 50);
     }
 
     &:after {
@@ -146,7 +148,7 @@ body {
       left: 50%;
       transform-style: flat;
       transform: translate3d(-50%, -30%, 0);
-      background: rgba(color-function($verde, A900), 0.15);
+      background: rgba(color-function($azul, 50), 0.15);
       border-radius: 100%;
       transition: width 150ms ease, height 150ms ease;
     }
@@ -190,7 +192,7 @@ body {
       left: 50%;
       transform-style: flat;
       transform: translate3d(-50%, -30%, 0);
-      background: rgba(color-function($verde, A900), 0.15);
+      background: rgba(color-function($azul, 50), 0.15);
       border-radius: 100%;
       transition: width 150ms ease, height 150ms ease;
     }
