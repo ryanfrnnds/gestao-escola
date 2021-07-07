@@ -1,1 +1,35 @@
-<p>tabela works!</p>
+<!--
+<div class="p-d-flex" style="margin-top: 0.5rem; margin-bottom: 1rem;">
+    <button type="button" pButton pRipple icon="pi pi-file-excel" tooltipPosition="bottom" label="Exportar EXCEL"
+        class="p-mr-2 bt_tabela_EXCEL" (click)="baixarExcel()"></button>
+    <button pButton type="button" class="bt_tabela_PDF" id="btnPesquisar" icon="pi pi-file-pdf" label="Exportar PDF"
+        style="margin-right: 0.5em;" (click)="baixarPdf()"></button>
+</div>
+-->
+<p-table [value]="estudantes" [responsive]="true" [columns]="colunas" [paginator]="true" [rows]="5" [showCurrentPageReport]="true">
+
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{ col.header }}
+            </th>
+        </tr>
+
+    </ng-template>
+
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr style="text-align: center">
+            <td *ngFor="let col of columns">
+                <div *ngIf="col.header !== 'AÇÕES'">
+                    {{ buscarValor(rowData[col.field])}}
+                </div>
+                <div *ngIf="col.header === 'AÇÕES'" class="acoes">
+                    <button type="button" pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></button>
+                    <button type="button" pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+
+</p-table>

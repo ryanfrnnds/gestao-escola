@@ -2,11 +2,11 @@
   <app-filtro [formulario]="formulario" [series]="series" [classes]="classes" (aoPesquisar)="pesquisar()" (aoLimpar)="limpar()">
   </app-filtro>
 </div>
-<!--
-  <div class="p-grid" *ngIf="paginated?.content?.length">
-    <div class="p-col-12">
+<div class="p-grid" *ngIf="true">
+  <div class="p-col-12">
+    <!--
       <app-estatisticas [estatisticas]="estatisticas"></app-estatisticas>
-      <app-tabela [paginated]="paginated" (aoBaixar)="fazerDownload($event)" (aoAlterarPagina)="clickPaginacao($event)"></app-tabela>
-    </div>
+    -->
+    <app-tabela [estudantes]="estudantes" *ngIf="estudantes?.length"></app-tabela>
   </div>
-  -->
+</div>

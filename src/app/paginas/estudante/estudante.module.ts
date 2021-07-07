@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng-lts/button';
 import { TableModule } from 'primeng-lts/table';
 import {DropdownModule} from 'primeng-lts/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EdicaoComponent } from './edicao/edicao.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EstudanteComponent,
     FiltroComponent,
     TabelaComponent,
+    EdicaoComponent,
     
   ],
   imports: [

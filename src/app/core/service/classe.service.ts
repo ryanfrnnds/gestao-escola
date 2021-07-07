@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Classe } from '@entidade';
-import { ObjectUtil } from '@util';
+import { HttpParamUtil, ObjectUtil } from '@util';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +15,14 @@ export class ClasseService {
 
   constructor(private http: HttpClient) { }
 
-  buscar(classe:Classe = null): Observable<Classe[]> {
-    const possuiFiltro = ObjectUtil.possuiValor(classe, 'nome');
+  buscar(filtro:Classe = null): Observable<Classe[]> {
+
+     const possuiFiltro = ObjectUtil.possuiValor(filtro, 'id');
     if(!possuiFiltro) {
       return this.buscarTodos();
     }
-    
-    const urlComFiltro = this.url +`?nome=${classe.nome}`;
-    console.log(urlComFiltro);
-    return this.http.get<any[]>(urlComFiltro).pipe(
+    const params = HttpParamUtil.criarParams<Classe>(filtro);
+    return this.http.get<any[]>(this.url, {params}).pipe(
       retry(2),
       catchError((error: HttpErrorResponse) => {
         console.error(error);

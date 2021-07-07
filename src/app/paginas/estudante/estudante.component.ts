@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Classe, Serie } from '@entidade';
+import { Classe, Estudante, EstudanteBDMemory, EstudanteFiltro, Serie } from '@entidade';
+import { ClasseService, SerieService } from '@services';
+import { forkJoin } from 'rxjs';
 import { EstudanteService } from './estudante.service';
 
 @Component({
@@ -15,15 +17,17 @@ export class EstudanteComponent implements OnInit {
   public formulario: FormGroup;
   public series: Array<Serie>;
   public classes: Array<Classe>;
+  public estudantes: Array<Estudante>;
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute) { }
+  constructor(private service: EstudanteService, private classeService: ClasseService, private serieService: SerieService, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.criarFormulario();
 
     this.series = this.route.snapshot.data.series;
     this.classes = this.route.snapshot.data.classes;
-    console.log(this.classes);
+
+    this.pesquisar();
   }
 
 
@@ -38,8 +42,18 @@ export class EstudanteComponent implements OnInit {
 		this.formulario.reset();
 	}
 
-  public pesquisar(event = null): void {
-		console.log(event);
+  public pesquisar(): void {
+    const estudantes: Array<Estudante> = [];
+		this.service.buscar(new EstudanteFiltro(this.formulario.getRawValue())).subscribe(estudantesBDMemory => {
+      const estudantes = new Array<Estudante>();
+      estudantesBDMemory.forEach(estudanteBDMemory => {
+        const estudante = new Estudante(estudanteBDMemory);
+        estudante.classe = this.classes.filter(classe => classe.id == estudanteBDMemory.classeId)[0];
+        estudante.serie = this.series.filter(serie => serie.id == estudanteBDMemory.serieId)[0];
+        estudantes.push(estudante);
+      });
+      this.estudantes = estudantes;
+    });
 	}
 
 }
