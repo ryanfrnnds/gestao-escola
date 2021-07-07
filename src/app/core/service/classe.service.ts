@@ -33,19 +33,7 @@ export class ClasseService {
   }
 
   private buscarTodos(): Observable<Classe[]> {
-    return this.http.get<any[]>(this.url).pipe(
-      retry(2),
-      catchError((error: HttpErrorResponse) => {
-        console.error(error);
-        return throwError(error);
-      })
-    );
-  }
-
-  
-
-  inserir(): Observable<any[]> {
-    return this.http.get<any[]>(this.url).pipe(
+    return this.http.get<Classe[]>(this.url).pipe(
       retry(2),
       catchError((error: HttpErrorResponse) => {
         console.error(error);

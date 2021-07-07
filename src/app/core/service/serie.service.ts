@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Serie } from '@entidade';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
@@ -12,8 +13,8 @@ export class SerieService {
 
   constructor(private http: HttpClient) { }
 
-  buscar(): Observable<any[]> {
-    return this.http.get<any[]>(this.serieUrl).pipe(
+  buscar(): Observable<Serie[]> {
+    return this.http.get<Serie[]>(this.serieUrl).pipe(
       retry(2),
       catchError((error: HttpErrorResponse) => {
         console.error(error);
