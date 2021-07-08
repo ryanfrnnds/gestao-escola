@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Classe, Estudante, EstudanteBDMemory, EstudanteFiltro, Serie } from '@entidade';
-import { ClasseService, SerieService } from '@services';
-import { BehaviorSubject, forkJoin } from 'rxjs';
-import { ignoreElements } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
 import { ToastrService } from 'src/app/core/toastr';
 import { EstudanteService } from './estudante.service';
 
@@ -42,8 +40,6 @@ export class EstudanteComponent implements OnInit {
         this.gerarGrafico();
       }
     })
-
-    
   }
   private gerarGrafico() {
     const labels:Array<String> = [];
